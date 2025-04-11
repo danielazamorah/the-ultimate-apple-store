@@ -18,7 +18,8 @@ export const MessageGenerator: React.FC<MessageGeneratorProps> = ({
   const { toast } = useToast();
 
   const generateMessage = () => {
-    const newMessage = `Hola tu, here are ${appleCount} apples, just because.`;
+    const appleEmojis = "🍎".repeat(appleCount);
+    const newMessage = `Hola tu, here are ${appleCount} apples, just because. ${appleEmojis}`;
     setMessage(newMessage);
     setShowMessage(true);
   };
