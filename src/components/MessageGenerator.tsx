@@ -53,7 +53,7 @@ export const MessageGenerator: React.FC<MessageGeneratorProps> = ({
             <Textarea
               readOnly
               value={message}
-              className="font-mono text-lg resize-none"
+              className="font-mono text-lg resize-none pr-10" // Added pr-10 to make space for the button
             />
             <Button
               variant="ghost"
