@@ -33,7 +33,7 @@ export default function Home() {
       <MessageGenerator appleCount={appleCount} />
 
       <footer className="absolute bottom-2 right-2 font-mono text-xs">
-        by <a href="https://www.linkedin.com/in/danielazamorah/" target="_blank" rel="noopener noreferrer">@danielazamorah</a>
+        by <a href="https://www.linkedin.com/in/danielazamorah/" target="_blank" rel="noopener noreferrer" className="underline text-primary">@danielazamorah</a>
       </footer>
     </main>
   );
