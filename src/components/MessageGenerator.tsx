@@ -66,7 +66,7 @@ export const MessageGenerator: React.FC<MessageGeneratorProps> = ({
           <p>or send it by email</p>
           <Button
               variant="ghost"
-              size="icon"
+              className="w-full justify-center"
               onClick={sendEmail}
             >
               <span className="sr-only">Send in Email</span>
