@@ -62,7 +62,9 @@ export const MessageGenerator: React.FC<MessageGeneratorProps> = ({
             >
               <Copy className="h-4 w-4" />
             </Button>
-            <Button
+          </div>
+          <p>or send it by email</p>
+          <Button
               variant="ghost"
               size="icon"
               onClick={sendEmail}
@@ -84,8 +86,6 @@ export const MessageGenerator: React.FC<MessageGeneratorProps> = ({
                 <path d="M2 7.47 12 12 22 7.47" />
               </svg>
             </Button>
-          </div>
-          <p>or send it by email</p>
         </div>
       )}
     </div>
