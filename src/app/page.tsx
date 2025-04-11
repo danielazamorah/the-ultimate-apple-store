@@ -33,9 +33,10 @@ export default function Home() {
       <MessageGenerator appleCount={appleCount} />
 
       <footer className="absolute bottom-2 right-2 font-mono text-xs">
-        by danielazamorah, creator @ morabalbs
+        by <a href="https://www.linkedin.com/in/danielazamorah/" target="_blank" rel="noopener noreferrer">@danielazamorah</a>
       </footer>
     </main>
   );
 }
+
 
