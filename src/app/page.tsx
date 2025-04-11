@@ -19,7 +19,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-white text-black p-4">
+    <main className="flex flex-col items-center justify-center min-h-screen bg-white text-black p-4 relative">
       <h1 className="font-mono text-2xl mb-4">Apple Gifter</h1>
 
       <AppleDisplay appleCount={appleCount} />
@@ -32,9 +32,10 @@ export default function Home() {
 
       <MessageGenerator appleCount={appleCount} />
 
-      <footer className="mt-8 font-mono text-sm">
+      <footer className="absolute bottom-2 right-2 font-mono text-xs">
         by danielazamorah, creator @ morabalbs
       </footer>
     </main>
   );
 }
+
