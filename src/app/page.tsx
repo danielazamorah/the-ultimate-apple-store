@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-white text-black p-4 relative">
-      <h1 className="font-mono text-2xl mb-4">The ultimate 🍎-store</h1>
+      <h1 className="font-mono text-3xl font-bold mb-4">the ultimate 🍎-store</h1>
 
       <AppleDisplay appleCount={appleCount} />
 
