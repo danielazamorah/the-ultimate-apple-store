@@ -41,13 +41,6 @@ export const MessageGenerator: React.FC<MessageGeneratorProps> = ({
     });
   };
 
-  const sendEmail = () => {
-    toast({
-      title: "Feature not available",
-      description: "Chill, this is my first web app, I haven't learned how to use mailto yet!",
-    });
-  };
-
   return (
     <div className="mt-4 flex flex-col items-center">
       <Button variant="default" onClick={generateMessage}>
@@ -61,7 +54,7 @@ export const MessageGenerator: React.FC<MessageGeneratorProps> = ({
             <Textarea
               readOnly
               value={message}
-              className="font-mono text-lg resize-none pr-10 w-full h-32"
+              className="font-mono text-lg resize-none pr-10 w-full h-48"
             />
             <Button
               variant="ghost"
@@ -72,10 +65,6 @@ export const MessageGenerator: React.FC<MessageGeneratorProps> = ({
               <Copy className="h-4 w-4" />
             </Button>
           </div>
-          <p className="mt-2">Or send it by email</p>
-          <Button variant="secondary" onClick={sendEmail} className="w-full max-w-md">
-            Send in Email
-          </Button>
         </div>
       )}
     </div>
