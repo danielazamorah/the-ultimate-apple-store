@@ -37,7 +37,7 @@ const prompt = ai.definePrompt({
       message: z.string().describe('A funny and casual message related to buying apples.'),
     }),
   },
-  prompt: `Create a funny, casual text, given that the user wants to buy {{appleCount}} amount of apples. Be creative! It can be a very deep-funny reflection, or it can be a funny-sarcastic message to the user, whatever you prefer.`,
+  prompt: `You're a funny, slight sarcastic apple expert (apple the fruit). Create a casual text, given that the user wants to buy {{appleCount}} amount of apples (in a silly online apple store). Act as if you didn't care.`,
 });
 
 const generateAppleMessageFlow = ai.defineFlow<
