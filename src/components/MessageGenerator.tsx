@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Copy } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { generateAppleMessage } from "@/ai/flows/generate-apple-message-flow";
 
 interface MessageGeneratorProps {
   appleCount: number;
@@ -16,13 +17,20 @@ export const MessageGenerator: React.FC<MessageGeneratorProps> = ({
   const [message, setMessage] = useState("");
   const [showMessage, setShowMessage] = useState(false);
   const { toast } = useToast();
-  const [emailMessage, setEmailMessage] = useState("");
 
-  const generateMessage = () => {
-    const appleEmojis = "🍎".repeat(appleCount);
-    const newMessage = `Hola tu, here are ${appleCount} apples, just because. ${appleEmojis}`;
-    setMessage(newMessage);
-    setShowMessage(true);
+  const generateMessage = async () => {
+    try {
+      const result = await generateAppleMessage({ appleCount: appleCount });
+      setMessage(result.message);
+      setShowMessage(true);
+    } catch (error) {
+      console.error("Error generating message:", error);
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Failed to generate message. Please try again.",
+      });
+    }
   };
 
   const copyToClipboard = () => {
@@ -33,14 +41,10 @@ export const MessageGenerator: React.FC<MessageGeneratorProps> = ({
     });
   };
 
-  const sendEmail = () => {
-    setEmailMessage("Chill, this is my first web app, I haven't learned how to use mailto");
-  };
-
   return (
     <div className="mt-4">
       <Button variant="default" onClick={generateMessage}>
-        Send Apples to a Friend
+        Buy Apples
       </Button>
 
       {showMessage && (
@@ -61,15 +65,6 @@ export const MessageGenerator: React.FC<MessageGeneratorProps> = ({
               <Copy className="h-4 w-4" />
             </Button>
           </div>
-          <p className="mt-2 text-sm">or send it by email</p>
-          <Button
-            variant="ghost"
-            className="w-full justify-center"
-            onClick={sendEmail}
-          >
-            Send in Email
-          </Button>
-          {emailMessage && <p className="text-green-500 mt-2">{emailMessage}</p>}
         </div>
       )}
     </div>
