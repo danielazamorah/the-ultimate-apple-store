@@ -21,7 +21,7 @@ export const MessageGenerator: React.FC<MessageGeneratorProps> = ({
   const generateMessage = async () => {
     try {
       const result = await generateAppleMessage({ appleCount: appleCount });
-      setMessage(result.message);
+      setMessage(result.message + ' 🍎'.repeat(appleCount));
       setShowMessage(true);
     } catch (error) {
       console.error("Error generating message:", error);
@@ -41,20 +41,27 @@ export const MessageGenerator: React.FC<MessageGeneratorProps> = ({
     });
   };
 
+  const sendEmail = () => {
+    toast({
+      title: "Feature not available",
+      description: "Chill, this is my first web app, I haven't learned how to use mailto yet!",
+    });
+  };
+
   return (
-    <div className="mt-4">
+    <div className="mt-4 flex flex-col items-center">
       <Button variant="default" onClick={generateMessage}>
         Buy Apples
       </Button>
 
       {showMessage && (
-        <div className="mt-4">
-          <p className="mb-2 text-sm">Copy your beautiful apple gift:</p>
-          <div className="relative">
+        <div className="mt-4 flex flex-col items-center">
+          <p className="mb-2 text-sm">🙋🏽‍♀️ (🍎 specialist):</p>
+          <div className="relative w-full max-w-md">
             <Textarea
               readOnly
               value={message}
-              className="font-mono text-lg resize-none pr-10 w-full" // Added w-full
+              className="font-mono text-lg resize-none pr-10 w-full h-32"
             />
             <Button
               variant="ghost"
@@ -65,6 +72,10 @@ export const MessageGenerator: React.FC<MessageGeneratorProps> = ({
               <Copy className="h-4 w-4" />
             </Button>
           </div>
+          <p className="mt-2">Or send it by email</p>
+          <Button variant="secondary" onClick={sendEmail} className="w-full max-w-md">
+            Send in Email
+          </Button>
         </div>
       )}
     </div>
