@@ -33,4 +33,6 @@ You can also switch to a VSCode-like interface to edit the code directly.
 
 ### Original User Request (to AI prototyper 🤖):
 
-    A simple web app, minimalist, typewriter-like font, white background, has an apple simple icon in the middle, apple the fruit, not the product, and it has a counter button down to add or remove the number of apples you want to add to the page. the only other element in the web page is a button to get a message. Yes, I know it's a silly app, but I want to do it anyways. You can click the button to generate the message again and again. It has a link, small, below, that says "by danielazamorah".
+    A simple web app, minimalist, typewriter-like font, white background, has an apple simple icon in the middle, apple the fruit, not the product, and it has a counter button down to add or remove the number of apples you want to add to the page. the only other element in the web page is a button that says: "send apples to a friend", which creates a message that the user can copy that says "Hola tu, here are {x} apples, just because." Yes, I know it's a silly app, but I want to do it anyways. You can close the message and start again. It has a text, small, below, that says "by danielazamorah."
+
+👆🏼 This changed because I wanted to have AI-generated messages to learn how to use GenKit (to connect by app to the Gemini API easily).
