@@ -10,7 +10,7 @@ The mega, super, ultra original idea of... an apple store (inside joke with my c
 
 Blueprint of web app, developed side by side with [Firebase Studio](https://firebase.google.com/)'s AI prototyping Agent. 
 
-How the development excperience looks like:
+How the development experience looks like:
 ![prototyping experience screenshot](docs/ai-prototype.png)
 
 You can also switch to a VSCode-like interface to edit the code directly.
